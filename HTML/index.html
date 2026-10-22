@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFlow | Meu Planejamento</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-icon">S</div>
+            <div>
+                <h1>StudyFlow</h1>
+                <p>Planeje. Estude. Conquiste.</p>
+            </div>
+        </div>
+        <span class="school-tag">ÁREA DO ESTUDANTE</span>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <span class="subtitle">SEU ESPAÇO DE ESTUDOS</span>
+                <h2>Vamos colocar os estudos em dia?</h2>
+                <p>Organize suas atividades e acompanhe seu progresso.</p>
+            </div>
+            <div class="welcome-icon">📚</div>
+        </section>
+
+        <section class="progress-card">
+            <div class="progress-heading">
+                <div>
+                    <h3>Seu progresso</h3>
+                    <p>Conclua suas atividades para avançar.</p>
+                </div>
+                <span id="progressPercent">0%</span>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+
+            <div class="stats">
+                <div>
+                    <span class="stat-number" id="total">0</span>
+                    <span class="stat-label">Atividades</span>
+                </div>
+                <div>
+                    <span class="stat-number" id="pending">0</span>
+                    <span class="stat-label">Por fazer</span>
+                </div>
+                <div>
+                    <span class="stat-number" id="completed">0</span>
+                    <span class="stat-label">Finalizadas</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-grid">
+
+            <section class="panel form-panel">
+                <div class="section-heading">
+                    <span class="heading-icon">＋</span>
+                    <div>
+                        <h3>Nova atividade</h3>
+                        <p>Adicione sua próxima tarefa.</p>
+                    </div>
+                </div>
+
+                <form id="taskForm">
+                    <label for="taskName">O que precisa fazer?</label>
+                    <input
+                        type="text"
+                        id="taskName"
+                        placeholder="Ex.: Resolver página 35"
+                        maxlength="120"
+                        required
+                    >
+
+                    <label for="subject">Disciplina</label>
+                    <select id="subject" required>
+                        <option value="">Escolha uma disciplina</option>
+                        <option>Matemática</option>
+                        <option>Português</option>
+                        <option>História</option>
+                        <option>Geografia</option>
+                        <option>Ciências</option>
+                        <option>Inglês</option>
+                        <option>Programação</option>
+                        <option>Outra</option>
+                    </select>
+
+                    <label for="dueDate">Prazo de entrega</label>
+                    <input type="date" id="dueDate">
+
+                    <button type="submit" class="primary-button">
+                        Adicionar à minha lista
+                    </button>
+
+                    <p id="formMessage" role="status"></p>
+                </form>
+            </section>
+
+            <section class="panel list-panel">
+                <div class="list-heading">
+                    <div>
+                        <h3>Minha lista de atividades</h3>
+                        <p>Um passo de cada vez.</p>
+                    </div>
+                    <span class="list-icon">✓</span>
+                </div>
+
+                <div class="filters">
+                    <button type="button" class="filter active"
+                        data-filter="all">Todas</button>
+                    <button type="button" class="filter"
+                        data-filter="pending">Por fazer</button>
+                    <button type="button" class="filter"
+                        data-filter="completed">Feitas</button>
+                </div>
+
+                <ul id="taskList" class="task-list"></ul>
+
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-icon">📝</div>
+                    <h4>Sua lista está livre!</h4>
+                    <p>Adicione uma atividade para começar seu planejamento.</p>
+                </div>
+            </section>
+
+        </section>
+
+        <footer>
+            <p>StudyFlow · Organizando sua rotina, uma tarefa por vez.</p>
+        </footer>
+
+    </main>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>
